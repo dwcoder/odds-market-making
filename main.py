@@ -92,7 +92,7 @@ if __name__ == "__main__":
     book.add_bet(OUTCOME_2, 31)
     book.add_bet(OUTCOME_3, 32)
 
-    # Let's see what our liablity now looks like
+    # Let's see what our liability now looks like
     
     book.book_of_bets()
     book.summarise_risk_position()

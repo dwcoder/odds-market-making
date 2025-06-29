@@ -23,6 +23,12 @@ book.show_odds_and_overround()
 book.add_bet(OUTCOME_1, 50)
 book.add_bet(OUTCOME_2, 31)
 book.add_bet(OUTCOME_3, 32)
+
+# Let's see what our liability now looks like
+
+book.book_of_bets()
+book.summarise_risk_position()
+
 ```
 
 ```
