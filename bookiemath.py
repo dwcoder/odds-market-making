@@ -1,3 +1,11 @@
+"""
+Class to include math to see things from _the bookmaker's perspective_.
+
+This is slightly different from viewing things on the Betfair exchange.
+"""
+
+from rich import print
+
 class Bookmaker:
     def __init__(self, outcomes: list[str]):
         self.outcomes = outcomes

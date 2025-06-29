@@ -1,6 +1,6 @@
 from rich import print
 
-from math import Bookmaker, reprice_from_liabilities
+from bookiemath import Bookmaker, reprice_from_liabilities
 
 if __name__ == "__main__":
 
