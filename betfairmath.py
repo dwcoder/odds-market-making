@@ -10,7 +10,8 @@ from collections import defaultdict
 import pandas as pd
 from datetime import datetime
 
-
+def _as_pct(x) -> str:
+    return f"{100 * (1/x):.2f}%"
 
 class BetfairMarket:
     def __init__(self):
@@ -34,8 +35,8 @@ class BetfairMarket:
         data = [
             {
                 "Outcome": outcome,
-                "Back Odds": f"{self.market_back_odds[outcome]:0.2f}({1/self.market_back_odds[outcome]:4.3f})" ,
-                "Lay Odds": f"{self.market_lay_odds[outcome]:0.2f}({1/self.market_lay_odds[outcome]:4.3f})" ,
+                "Back Odds": f"{self.market_back_odds[outcome]:0.2f}({_as_pct(self.market_back_odds[outcome])})" ,
+                "Lay Odds": f"{self.market_lay_odds[outcome]:0.2f}({_as_pct(self.market_lay_odds[outcome])})" ,
             }
             for outcome in outcomes
         ]
@@ -140,8 +141,8 @@ if __name__ == "__main__":
 
     book2 = BetfairPunterBook(market)
 
-    book2.add_bet_lay('Biden', 0)
-    book2.add_bet_lay('Kamala', 1)
+    book2.add_bet_lay('Biden', 1)
+    book2.add_bet_lay('Kamala', 0)
 
     df_bets, df_summary = book2.show_table()
     print(df_bets.to_markdown(index=False))
